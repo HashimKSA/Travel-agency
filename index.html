@@ -1,1 +1,246 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderlust Travels</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }body {
+  background-color: #f8f9fa;
+  color: #333;
+  overflow-x: hidden;
+}
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: #003366;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  border-radius: 5px;
+}
+
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+  background: linear-gradient(to right, #003366, #006699);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: #ffcc00;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e6b800;
+}
+
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 1rem auto;
+  line-height: 1.6;
+}
+
+.services {
+  background: #eef3f8;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+.contact input, .contact textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #003366;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Wanderlust</div>
+    <nav id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>  <section id="home" class="hero">
+    <h1>Discover the World With Us</h1>
+    <p>Unforgettable journeys crafted just for you.</p>
+    <button class="btn">Start Your Adventure</button>
+  </section>  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Wanderlust Travels is a premier travel agency dedicated to helping explorers experience the world with ease, comfort, and inspiration. Whether you crave serene beaches, bustling cities, or hidden gems, we bring your travel dreams to life.</p>
+  </section>  <section id="services" class="services">
+    <h2>Core Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Flight Booking</h3>
+        <p>Book domestic and international flights at competitive prices with trusted airlines.</p>
+      </div>
+      <div class="service-card">
+        <h3>Hotel Reservations</h3>
+        <p>Access premium accommodations that match your style and budget worldwide.</p>
+      </div>
+      <div class="service-card">
+        <h3>Tour Packages</h3>
+        <p>Choose from a variety of handpicked itineraries or customize your own adventure.</p>
+      </div>
+      <div class="service-card">
+        <h3>Visa Assistance</h3>
+        <p>Comprehensive visa support and documentation services to make travel stress-free.</p>
+      </div>
+    </div>
+  </section>  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>  <footer>
+    <p>© 2025 Wanderlust Travels. All rights reserved.</p>
+  </footer>  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Message sent successfully!');
+      this.reset();
+    });
+  </script></body>
+</html>
